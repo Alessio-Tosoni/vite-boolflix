@@ -17,21 +17,22 @@ export default {
 			options : {
   			method: 'GET',
   			url: 'https://api.themoviedb.org/3/search/movie',
-  			params: {include_adult: 'false', language: 'en-US', page: '1'},
+  			params: {api_key:"ae000a48c3ede78a529a0a8f11fefcb1", query: store.searchString, include_adult: 'false', language: 'en-US', page: '1'},
   			headers: {
    			accept: 'application/json',
     		Authorization: 'ae000a48c3ede78a529a0a8f11fefcb1'
   			}
-}
+			}
 
         };
     },
     
 	methods: {
 		cerca (){
+			this.options.query = store.searchString
 			axios.request(this.options)
 			.then(function (response) {
-		  console.log(response.data);
+		  console.log(response.data.result);
 			})
 			.catch(function (error) {
 		  console.error(error);
