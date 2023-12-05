@@ -20,7 +20,7 @@ export default {
   			params: {include_adult: 'false', language: 'en-US', page: '1'},
   			headers: {
    			accept: 'application/json',
-    		Authorization: 'Bearer ae000a48c3ede78a529a0a8f11fefcb1'
+    		Authorization: 'ae000a48c3ede78a529a0a8f11fefcb1'
   			}
 }
 
@@ -28,8 +28,8 @@ export default {
     },
     
 	methods: {
-		search (){
-			axios.request(options)
+		cerca (){
+			axios.request(this.options)
 			.then(function (response) {
 		  console.log(response.data);
 			})
@@ -45,7 +45,7 @@ export default {
 
 <template>
     <AppHeader />
-	<SearchBar @search="search"/>
+	<SearchBar @search="cerca"/>
     
 </template>
 
