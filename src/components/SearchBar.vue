@@ -20,7 +20,7 @@ export default {
 
 <template>
     <div class="ml-50 mt-30"> 
-        <input class="" placeholder="Cerca per nome" v-model="store.searchString" @keyup.enter="$emit('search')">
+        <input class="" placeholder="Cerca per nome" v-model="this.store.searchString" @keyup.enter="$emit('search')">
         <button @click="search">Cerca</button>
     </div>
 </template>
